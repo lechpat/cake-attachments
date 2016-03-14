@@ -5,9 +5,8 @@ App.Components.AttachmentsComponent = Frontend.Component.extend({
         }
 
         var config = {
-            uploadUrl: '/attachments/attachments/upload'
+            uploadUrl: App.Main.Router.url({plugin: 'Attachments',controller: 'attachments', action: 'upload',pass:[]})
         };
-
         this.Controller.$('.fileupload').each(function(i, el) {
             var widget = new App.Lib.AttachmentsWidget($(el), config);
         }.bind(this));
